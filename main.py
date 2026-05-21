@@ -1,8 +1,8 @@
 '''
-Author: HideInTower 1075277345@qq.com
+Author: Leo 
 Date: 2026-02-26 11:19:13
-LastEditors: HideInTower 1075277345@qq.com
-LastEditTime: 2026-03-16 17:11:00
+LastEditors: Leo 
+LastEditTime: 2026-05-08 16:59:17
 Description: 
 
 Copyright (c) 2026 by ${git_name_email}, All Rights Reserved. 
@@ -31,5 +31,7 @@ if __name__ == "__main__":
     setup_logging()
     logger = logging.getLogger(__name__)
     logger.info("Trading start")
+    from core import MarketManager
+    MarketManager.market_manager.subscribe_all_markets()
     from core import PositionManager
     PositionManager.position_instance.run()
